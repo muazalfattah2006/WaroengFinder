@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BookmarkFilled } from "../components/icons/BookmarkFilled";
 import { Search } from "../components/icons/Search";
 import { DummyImage } from "../components/shared/DummyImage";
@@ -26,11 +26,26 @@ const featuredWarungs = [
 ];
 
 export const Beranda = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("authUser");
+    navigate("/login", { replace: true });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="h-20 flex items-center justify-between px-4 sm:px-8 shadow-[0px_5px_4px_#00000040] bg-[linear-gradient(90deg,rgba(56,118,71,1)_0%,rgba(255,232,135,1)_100%)]">
-        <div className="flex items-center gap-4" />
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="px-3 py-1 rounded-full bg-white/20 text-white text-xs sm:text-sm [font-family:'Playfair-Black',Helvetica] shadow-[0px_3px_3px_#00000040] transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
+          >
+            Logout
+          </button>
+        </div>
         <h1 className="[font-family:'Playfair-Black',Helvetica] font-black text-white text-2xl sm:text-3xl tracking-[0] leading-[normal]">
           Waroeng Finder
         </h1>
