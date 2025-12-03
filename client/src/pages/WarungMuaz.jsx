@@ -91,13 +91,13 @@ export const DetailWarungMuaz = () => {
               <button
                 type="button"
                 onClick={() => setIsFavorite((prev) => !prev)}
-                aria-label="Tambah ke favorite"
-                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#387647] transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
+                aria-label={isFavorite ? "Hapus dari favorite" : "Tambah ke favorite"}
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
               >
                 {isFavorite ? (
                   <BookmarkFilled className="w-full h-full" color="#387647" />
                 ) : (
-                  <Bookmark className="w-full h-full" />
+                  <Bookmark className="w-full h-full" color="#9ca3af" />
                 )}
               </button>
             </div>

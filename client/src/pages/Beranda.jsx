@@ -45,7 +45,7 @@ export const Beranda = () => {
       {/* Content */}
       <main className="flex-1 px-4 sm:px-8 lg:px-16 py-8 sm:py-10 space-y-10 sm:space-y-12">
         {/* Telusuri bar */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <button className="w-full h-14 sm:h-16 rounded-full shadow-[0px_5px_4px_#00000040] bg-[#387647] flex items-center justify-center relative transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0">
             <div className="absolute left-6 flex items-center gap-2 text-white">
               <Search className="w-6 h-6" />
@@ -60,7 +60,7 @@ export const Beranda = () => {
         </div>
 
         {/* Hero section */}
-        <section className="max-w-5xl mx-auto rounded-3xl shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] px-6 sm:px-10 py-10 sm:py-14 text-center text-white animate-fade-up" style={{ "--animation-delay": "0.05s" }}>
+        <section className="max-w-6xl mx-auto rounded-3xl shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] px-6 sm:px-10 py-10 sm:py-14 text-center text-white animate-fade-up" style={{ "--animation-delay": "0.05s" }}>
           <h2 className="[font-family:'Playfair-Black',Helvetica] font-black text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
             Selamat Datang di
             <br />
@@ -100,10 +100,10 @@ export const Beranda = () => {
                 >
                   {warung.name}
                 </Link>
-                <p className="[font-family:'Playfair-Black',Helvetica] font-black text-sm text-center">
+                <p className="[font-family:'Playfair-Black',Helvetica] text-sm text-center">
                   {warung.price}
                 </p>
-                <p className="[font-family:'Playfair-Black',Helvetica] font-black text-sm text-center mt-1">
+                <p className="[font-family:'Playfair-Black',Helvetica] text-sm text-center mt-1">
                   {warung.location}
                 </p>
               </article>
@@ -133,10 +133,10 @@ export const Beranda = () => {
                 <div className="[font-family:'Playfair-Black',Helvetica] font-black text-2xl text-center mb-1">
                   {warung.name}
                 </div>
-                <p className="[font-family:'Playfair-Black',Helvetica] font-black text-sm text-center">
+                <p className="[font-family:'Playfair-Black',Helvetica] text-sm text-center">
                   {warung.price}
                 </p>
-                <p className="[font-family:'Playfair-Black',Helvetica] font-black text-sm text-center mt-1">
+                <p className="[font-family:'Playfair-Black',Helvetica] text-sm text-center mt-1">
                   {warung.location}
                 </p>
               </article>

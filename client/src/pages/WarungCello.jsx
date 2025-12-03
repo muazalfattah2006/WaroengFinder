@@ -30,7 +30,7 @@ export const DetailWarungCello = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#387647] flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <main className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)] animate-fade-up" style={{ "--animation-delay": "0.03s" }}>
         {/* Hero with back button */}
         <div className="relative w-full">
@@ -91,13 +91,13 @@ export const DetailWarungCello = () => {
               <button
                 type="button"
                 onClick={() => setIsFavorite((prev) => !prev)}
-                aria-label="Tambah ke favorite"
-                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#387647] transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
+                aria-label={isFavorite ? "Hapus dari favorite" : "Tambah ke favorite"}
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
               >
                 {isFavorite ? (
                   <BookmarkFilled className="w-full h-full" color="#387647" />
                 ) : (
-                  <Bookmark className="w-full h-full" />
+                  <Bookmark className="w-full h-full" color="#9ca3af" />
                 )}
               </button>
             </div>
