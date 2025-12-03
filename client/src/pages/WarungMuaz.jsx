@@ -21,9 +21,53 @@ const menuItems = [
   { id: 12, name: "Air Mineral", price: "Rp 5.000" },
 ];
 
+const FAVORITES_KEY = "favoriteWarungs";
+
+const WARUNG_INFO = {
+  id: "warung-muaz",
+  name: "Warung Muaz",
+  price: "Mulai dari Rp10.000",
+  location: "📍Jalan Dr. Mansyur",
+  link: "/warung/muaz",
+};
+
 export const DetailWarungMuaz = () => {
   const navigate = useNavigate();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      const stored = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+      return stored.some((item) => item.id === WARUNG_INFO.id);
+    } catch {
+      return false;
+    }
+  });
+
+  const handleToggleFavorite = () => {
+    setIsFavorite((prev) => {
+      const next = !prev;
+      if (typeof window === "undefined") return next;
+
+      try {
+        const stored = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+        let updated = Array.isArray(stored) ? [...stored] : [];
+
+        if (next) {
+          if (!updated.some((item) => item.id === WARUNG_INFO.id)) {
+            updated.push(WARUNG_INFO);
+          }
+        } else {
+          updated = updated.filter((item) => item.id !== WARUNG_INFO.id);
+        }
+
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify(updated));
+      } catch {
+        // ignore storage errors
+      }
+
+      return next;
+    });
+  };
 
   const handleGoToUlasan = () => {
     navigate("/ulasan");
@@ -90,7 +134,7 @@ export const DetailWarungMuaz = () => {
 
               <button
                 type="button"
-                onClick={() => setIsFavorite((prev) => !prev)}
+                onClick={handleToggleFavorite}
                 aria-label={isFavorite ? "Hapus dari favorite" : "Tambah ke favorite"}
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
               >

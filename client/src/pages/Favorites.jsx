@@ -3,32 +3,20 @@ import { useNavigate, Link } from "react-router-dom";
 import { ArrowBack } from "./ArrowBack";
 import { DummyImage } from "./DummyImage";
 
-const favoriteWarungs = [
-  {
-    id: 1,
-    name: "Warung Muaz",
-    price: "Mulai dari Rp10.000",
-    location: "📍Jalan Dr. Mansyur",
-    link: "/warung/muaz",
-  },
-  {
-    id: 2,
-    name: "Warung Cello",
-    price: "Mulai dari Rp10.000",
-    location: "📍Jalan Jamin Ginting",
-    link: "/warung/cello",
-  },
-  {
-    id: 3,
-    name: "Warung Naswa",
-    price: "Mulai dari Rp10.000",
-    location: "📍Jalan Pembangunan",
-    link: "/warung/naswa",
-  },
-];
-
 export const Favorite = () => {
   const navigate = useNavigate();
+  const [favoriteWarungs, setFavoriteWarungs] = React.useState([]);
+
+  React.useEffect(() => {
+    try {
+      const stored = JSON.parse(
+        localStorage.getItem("favoriteWarungs") || "[]"
+      );
+      setFavoriteWarungs(Array.isArray(stored) ? stored : []);
+    } catch {
+      setFavoriteWarungs([]);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">

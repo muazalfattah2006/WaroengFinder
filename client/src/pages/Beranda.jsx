@@ -126,13 +126,18 @@ export const Beranda = () => {
                 className="rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] p-4 flex flex-col items-center text-white transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0px_12px_18px_rgba(0,0,0,0.25)] animate-fade-up"
                 style={{ "--animation-delay": "0.15s" }}
               >
-                <DummyImage
-                  className="w-full aspect-[1] mb-4"
-                  alt={warung.name}
-                />
-                <div className="[font-family:'Playfair-Black',Helvetica] font-black text-2xl text-center mb-1">
+                <Link to={warung.link} className="w-full">
+                  <DummyImage
+                    className="w-full aspect-[1] mb-4"
+                    alt={warung.name}
+                  />
+                </Link>
+                <Link
+                  to={warung.link}
+                  className="[font-family:'Playfair-Black',Helvetica] font-black text-2xl text-center mb-1"
+                >
                   {warung.name}
-                </div>
+                </Link>
                 <p className="[font-family:'Playfair-Black',Helvetica] text-sm text-center">
                   {warung.price}
                 </p>
