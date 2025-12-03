@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export const Login = () => {
+export const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +14,10 @@ export const Login = () => {
       password: password || undefined,
     };
 
-    localStorage.setItem("authUser", JSON.stringify(user));
+    if (onLogin) {
+      onLogin(user);
+    }
+
     navigate("/beranda", { replace: true });
   };
 

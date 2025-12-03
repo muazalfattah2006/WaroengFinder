@@ -25,12 +25,13 @@ const featuredWarungs = [
   },
 ];
 
-export const Beranda = () => {
+export const Beranda = ({ onLogout }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("authUser");
-    navigate("/login", { replace: true });
+    if (onLogout) {
+      onLogout();
+    }
   };
 
   return (

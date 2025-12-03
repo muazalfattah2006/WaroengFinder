@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import bg from "./assets/img/bg.jpg";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -13,7 +13,19 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem("authUser");
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => !!localStorage.getItem("authUser")
+  );
+
+  const handleLogin = (user) => {
+    localStorage.setItem("authUser", JSON.stringify(user));
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("authUser");
+    setIsAuthenticated(false);
+  };
 
   return (
     <BrowserRouter>
@@ -24,8 +36,11 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route
+            path="/register"
+            element={<Register onLogin={handleLogin} />}
+          />
 
           {/* Root tanpa path akan diarahkan ke halaman login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
@@ -33,7 +48,11 @@ function App() {
           <Route
             path="/beranda"
             element={
-              isAuthenticated ? <Beranda /> : <Navigate to="/login" replace />
+              isAuthenticated ? (
+                <Beranda onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/login" replace />
+              )
             }
           />
           <Route
