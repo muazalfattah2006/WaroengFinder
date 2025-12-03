@@ -18,6 +18,20 @@ export const DetailTelusuri = () => {
     { id: "ulasan", label: "Ulasan" },
   ];
 
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+
+  const showMuaz =
+    !normalizedQuery ||
+    "warung muaz muaz".toLowerCase().includes(normalizedQuery);
+
+  const showCello =
+    !normalizedQuery ||
+    "warung cello cello".toLowerCase().includes(normalizedQuery);
+
+  const showNaswa =
+    !normalizedQuery ||
+    "warung naswa naswa".toLowerCase().includes(normalizedQuery);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -71,17 +85,23 @@ export const DetailTelusuri = () => {
 
       {/* Content sections */}
       <main className="flex-1 px-4 sm:px-8 lg:px-16 pb-10 space-y-10">
-        <section aria-label="Featured restaurants" className="max-w-6xl mx-auto">
-          <FeaturedRestaurantsSection />
-        </section>
+        {showMuaz && (
+          <section aria-label="Featured restaurants" className="max-w-6xl mx-auto">
+            <FeaturedRestaurantsSection />
+          </section>
+        )}
 
-        <section aria-label="Restaurant list" className="max-w-6xl mx-auto">
-          <RestaurantListSection />
-        </section>
+        {showCello && (
+          <section aria-label="Restaurant list" className="max-w-6xl mx-auto">
+            <RestaurantListSection />
+          </section>
+        )}
 
-        <section aria-label="Restaurant categories" className="max-w-6xl mx-auto">
-          <RestaurantCategoriesSection />
-        </section>
+        {showNaswa && (
+          <section aria-label="Restaurant categories" className="max-w-6xl mx-auto">
+            <RestaurantCategoriesSection />
+          </section>
+        )}
       </main>
     </div>
   );
