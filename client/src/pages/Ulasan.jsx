@@ -38,7 +38,7 @@ export const Ulasan = () => {
   };
 
   return (
-    <div className="relative w-[1366px] h-[1727px] bg-white">
+    <div className="relative w-[1366px] h-[1727px] bg-transparent">
       <header className="top-[63px] left-[calc(50.00%_-_596px)] w-[1258px] h-[63px] rounded-[50px] bg-[linear-gradient(90deg,rgba(56,118,71,1)_0%,rgba(255,232,135,1)_100%)] absolute shadow-[0px_7px_4px_#00000040] bg-variable-collection-hijau">
         <div className="absolute top-0 left-[calc(50.00%_-_513px_-_(50.00%_-_596px))] text-white text-5xl [font-family:'Playfair-Black',Helvetica] font-black tracking-[0] leading-[normal]">
           5/5

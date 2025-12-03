@@ -27,7 +27,7 @@ const featuredWarungs = [
 
 export const Beranda = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="h-20 flex items-center justify-between px-4 sm:px-8 shadow-[0px_5px_4px_#00000040] bg-[linear-gradient(90deg,rgba(56,118,71,1)_0%,rgba(255,232,135,1)_100%)]">
         <div className="flex items-center gap-4" />

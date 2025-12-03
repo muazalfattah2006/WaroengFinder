@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import bg from "./assets/img/bg.jpg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Beranda } from "./pages/Beranda";
 import { DetailTelusuri } from "./pages/Telusuri";
@@ -12,7 +13,12 @@ import { Ulasan } from "./pages/Ulasan";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen overflow-x-hidden">
+      <div
+        className="min-h-screen overflow-x-hidden bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: `url(${bg})`,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Beranda />} />
           <Route path="/telusuri" element={<DetailTelusuri />} />
