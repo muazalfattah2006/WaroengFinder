@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowBack } from "./ArrowBack";
-import { Bookmark } from "./Bookmark";
-import { BookmarkFilled } from "./BookmarkFilled";
-import { ChevronBackward } from "./ChevronBackward";
-import { DummyImage } from "./DummyImage";
+import { ArrowBack } from "../components/icons/ArrowBack";
+import { Bookmark } from "../components/icons/Bookmark";
+import { BookmarkFilled } from "../components/icons/BookmarkFilled";
+import { ChevronBackward } from "../components/icons/ChevronBackward";
+import { DummyImage } from "../components/shared/DummyImage";
 
 const menuItems = [
   { id: 1, name: "Ayam Penyet", price: "Rp 10.000" },

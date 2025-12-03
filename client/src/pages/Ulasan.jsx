@@ -1,6 +1,6 @@
 import React from "react";
-import { ArrowBack } from "./ArrowBack";
-import { DummyImage } from "./DummyImage";
+import { ArrowBack } from "../components/icons/ArrowBack";
+import { DummyImage } from "../components/shared/DummyImage";
 
 export const Ulasan = () => {
   const reviews = [

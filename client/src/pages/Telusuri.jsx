@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowBack } from "./ArrowBack";
-import { FeaturedRestaurantsSection } from "./FeaturedRestaurantSection";
-import { RestaurantCategoriesSection } from "./RestaurantCategoriesSection";
-import { RestaurantListSection } from "./RestaurantListSection";
-import { Search } from "./Search";
+import { ArrowBack } from "../components/icons/ArrowBack";
+import { FeaturedRestaurantsSection } from "../components/shared/FeaturedRestaurantSection";
+import { RestaurantCategoriesSection } from "../components/shared/RestaurantCategoriesSection";
+import { RestaurantListSection } from "../components/shared/RestaurantListSection";
+import { Search } from "../components/icons/Search";
 
 export const DetailTelusuri = () => {
   const navigate = useNavigate();

@@ -4,30 +4,10 @@ import { DummyImage } from "./DummyImage";
 
 export const RestaurantCategoriesSection = () => {
   const menuItems = [
-    {
-      id: 1,
-      name: "Ayam Geprek",
-      price: "Rp 10.000",
-      left: "368px",
-    },
-    {
-      id: 2,
-      name: "Ayam Penyet",
-      price: "Rp 10.000",
-      left: "605px",
-    },
-    {
-      id: 3,
-      name: "Ayam S. Ijo",
-      price: "Rp 10.000",
-      left: "842px",
-    },
-    {
-      id: 4,
-      name: "Ayam Gulai",
-      price: "Rp 10.000",
-      left: "1079px",
-    },
+    { id: 1, name: "Ayam Geprek", price: "Rp 10.000" },
+    { id: 2, name: "Ayam Penyet", price: "Rp 10.000" },
+    { id: 3, name: "Ayam S. Ijo", price: "Rp 10.000" },
+    { id: 4, name: "Ayam Gulai", price: "Rp 10.000" },
   ];
 
   return (
@@ -88,4 +68,4 @@ export const RestaurantCategoriesSection = () => {
       </div>
     </section>
   );
-}
+};

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BookmarkFilled } from "./BookmarkFilled";
-import { Search } from "./Search";
-import { DummyImage } from "./DummyImage";
+import { BookmarkFilled } from "../components/icons/BookmarkFilled";
+import { Search } from "../components/icons/Search";
+import { DummyImage } from "../components/shared/DummyImage";
 
 const featuredWarungs = [
   {

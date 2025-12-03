@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { ArrowBack } from "./ArrowBack";
-import { DummyImage } from "./DummyImage";
-import { Search } from "./Search";
+import { ArrowBack } from "../components/icons/ArrowBack";
+import { DummyImage } from "../components/shared/DummyImage";
+import { Search } from "../components/icons/Search";
 
 export const Favorite = () => {
   const navigate = useNavigate();
