@@ -58,8 +58,8 @@ export const DetailTelusuri = () => {
               onClick={() => setActiveFilter(tab.label)}
               className={`h-11 rounded-full shadow-[0px_5px_4px_#00000040] [font-family:'Playfair-Medium',Helvetica] text-base sm:text-lg tracking-[0] leading-[normal] whitespace-nowrap transition-colors transition-transform duration-150 hover:-translate-y-0.5 ${
                 activeFilter === tab.label
-                  ? "bg-[#68dc84] text-white"
-                  : "bg-white text-[#387647] border border-[#68dc84]"
+                  ? "bg-[#387647] text-white"
+                  : "bg-[#68dc84] text-white"
               }`}
               aria-pressed={activeFilter === tab.label}
             >
