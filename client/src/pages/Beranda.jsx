@@ -34,7 +34,10 @@ export const Beranda = () => {
         <h1 className="[font-family:'Playfair-Black',Helvetica] font-black text-white text-2xl sm:text-3xl tracking-[0] leading-[normal]">
           Waroeng Finder
         </h1>
-        <Link to="/favorite" className="text-white">
+        <Link
+          to="/favorite"
+          className="text-white transition-transform active:scale-95 hover:scale-105"
+        >
           <BookmarkFilled className="w-10 h-10" color="#387647" />
         </Link>
       </header>
@@ -43,7 +46,7 @@ export const Beranda = () => {
       <main className="flex-1 px-4 sm:px-8 lg:px-16 py-8 sm:py-10 space-y-10 sm:space-y-12">
         {/* Telusuri bar */}
         <div className="max-w-5xl mx-auto">
-          <button className="w-full h-14 sm:h-16 rounded-full shadow-[0px_5px_4px_#00000040] bg-[#387647] flex items-center justify-center relative">
+          <button className="w-full h-14 sm:h-16 rounded-full shadow-[0px_5px_4px_#00000040] bg-[#387647] flex items-center justify-center relative transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0">
             <div className="absolute left-6 flex items-center gap-2 text-white">
               <Search className="w-6 h-6" />
             </div>

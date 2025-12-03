@@ -24,7 +24,7 @@ export const DetailTelusuri = () => {
         <button
           type="button"
           onClick={() => navigate(-1)}
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ffcf03] text-white"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ffcf03] text-white transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
           aria-label="Go back"
         >
           <ArrowBack className="w-8 h-8" />

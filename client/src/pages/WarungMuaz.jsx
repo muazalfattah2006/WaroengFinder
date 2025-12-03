@@ -44,7 +44,7 @@ export const DetailWarungMuaz = () => {
             type="button"
             onClick={() => navigate(-1)}
             aria-label="Kembali"
-            className="absolute top-3 left-3 sm:top-4 sm:left-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#ffcf03] flex items-center justify-center shadow"
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#ffcf03] flex items-center justify-center shadow transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
           >
             <ArrowBack className="w-7 h-7 sm:w-8 sm:h-8" />
           </button>
@@ -62,7 +62,7 @@ export const DetailWarungMuaz = () => {
                 <button
                   type="button"
                   onClick={handleGoToUlasan}
-                  className="flex items-center gap-1 [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-xl sm:text-2xl"
+                  className="flex items-center gap-1 [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-xl sm:text-2xl transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
                   aria-label="Lihat ulasan"
                 >
                   <span>⭐⭐⭐⭐⭐</span>
@@ -72,7 +72,7 @@ export const DetailWarungMuaz = () => {
                   type="button"
                   onClick={handleGoToUlasan}
                   aria-label="Ke halaman ulasan"
-                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#387647] rotate-180"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#387647] rotate-180 transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
                 >
                   <ChevronBackward className="w-full h-full" />
                 </button>
@@ -92,7 +92,7 @@ export const DetailWarungMuaz = () => {
                 type="button"
                 onClick={() => setIsFavorite((prev) => !prev)}
                 aria-label="Tambah ke favorite"
-                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#387647]"
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#387647] transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
               >
                 {isFavorite ? (
                   <BookmarkFilled className="w-full h-full" color="#387647" />
