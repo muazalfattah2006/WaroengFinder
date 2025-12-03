@@ -31,7 +31,7 @@ export const DetailWarungMuaz = () => {
 
   return (
     <div className="min-h-screen bg-[#387647] flex flex-col">
-      <main className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)]">
+      <main className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)] animate-fade-up" style={{ "--animation-delay": "0.03s" }}>
         {/* Hero with back button */}
         <div className="relative w-full">
           <DummyImage
@@ -114,7 +114,8 @@ export const DetailWarungMuaz = () => {
             {menuItems.map((item) => (
               <article
                 key={item.id}
-                className="rounded-[20px] sm:rounded-[25px] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] shadow-[0px_7px_4px_#00000040] p-3 sm:p-4 flex flex-col items-center text-center text-white"
+                className="rounded-[20px] sm:rounded-[25px] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] shadow-[0px_7px_4px_#00000040] p-3 sm:p-4 flex flex-col items-center text-center text-white transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0px_12px_18px_rgba(0,0,0,0.25)] animate-fade-up"
+                style={{ "--animation-delay": "0.08s" }}
               >
                 <DummyImage
                   className="w-full aspect-[1] mb-3 sm:mb-4"

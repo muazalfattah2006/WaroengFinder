@@ -52,7 +52,7 @@ export const Favorite = () => {
 
       {/* Content */}
       <main className="flex-1 px-4 sm:px-8 lg:px-16 py-8 sm:py-10 space-y-8">
-        <section className="max-w-6xl mx-auto space-y-6">
+        <section className="max-w-6xl mx-auto space-y-6 animate-fade-up" style={{ "--animation-delay": "0.05s" }}>
           <div className="w-full h-14 rounded-full shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(90deg,rgba(56,118,71,1)_0%,rgba(255,232,135,1)_100%)] flex items-center justify-center">
             <h2 className="[font-family:'Playfair-Black',Helvetica] font-black text-white text-xl sm:text-2xl">
               Waroeng Favorite Kamu

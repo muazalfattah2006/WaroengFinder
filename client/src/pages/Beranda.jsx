@@ -57,7 +57,7 @@ export const Beranda = () => {
         </div>
 
         {/* Hero section */}
-        <section className="max-w-5xl mx-auto rounded-3xl shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] px-6 sm:px-10 py-10 sm:py-14 text-center text-white">
+        <section className="max-w-5xl mx-auto rounded-3xl shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] px-6 sm:px-10 py-10 sm:py-14 text-center text-white animate-fade-up" style={{ "--animation-delay": "0.05s" }}>
           <h2 className="[font-family:'Playfair-Black',Helvetica] font-black text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
             Selamat Datang di
             <br />
@@ -82,7 +82,8 @@ export const Beranda = () => {
             {featuredWarungs.map((warung) => (
               <article
                 key={warung.name}
-                className="rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] p-4 flex flex-col items-center text-white"
+                className="rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] p-4 flex flex-col items-center text-white transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0px_12px_18px_rgba(0,0,0,0.25)] animate-fade-up"
+                style={{ "--animation-delay": "0.1s" }}
               >
                 <Link to={warung.link} className="w-full">
                   <DummyImage
@@ -119,7 +120,8 @@ export const Beranda = () => {
             {featuredWarungs.map((warung) => (
               <article
                 key={`${warung.name}-second`}
-                className="rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] p-4 flex flex-col items-center text-white"
+                className="rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] p-4 flex flex-col items-center text-white transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0px_12px_18px_rgba(0,0,0,0.25)] animate-fade-up"
+                style={{ "--animation-delay": "0.15s" }}
               >
                 <DummyImage
                   className="w-full aspect-[1] mb-4"
