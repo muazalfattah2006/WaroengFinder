@@ -1,8 +1,6 @@
 import React from "react";
 import { ArrowBack } from "./ArrowBack";
-import ellipse1 from "./ellipse-1.png";
-import ellipse2 from "./ellipse-2.png";
-import ellipse3 from "./ellipse-3.png";
+import { DummyImage } from "./DummyImage";
 
 export const Ulasan = () => {
   const reviews = [
@@ -10,7 +8,7 @@ export const Ulasan = () => {
       id: 1,
       name: "Jennifer",
       rating: 5,
-      image: ellipse1,
+      imageAlt: "Reviewer avatar",
       text: "Dari pertama kali datang aja udah terasa suasananya nyaman banget. Pelayanannya cepat, ramah, dan bikin betah. Menu andalannya, ayam sambal ijonya, bener-bener juara! Rasanya gurih, pedasnya pas, dan nasinya selalu hangat. Tempatnya juga bersih dan rapi, jadi makin nyaman buat makan bareng teman atau keluarga. Udah beberapa kali ke sini dan rasanya selalu konsisten. Pokoknya kalau lagi lapar, ini tempat pertama yang langsung kepikiran!",
       topPosition: "221px",
       cardTopPosition: "186px",
@@ -19,7 +17,7 @@ export const Ulasan = () => {
       id: 2,
       name: "Joshua",
       rating: 5,
-      image: ellipse2,
+      imageAlt: "Reviewer avatar",
       text: "Warung ini definisi 'murah tapi nggak murahan'. Dengan harga yang super terjangkau, porsinya banyak dan rasanya luar biasa! Bumbunya meresap, lauknya selalu fresh, dan sambalnya tuh bikin nagih banget. Minumannya juga segar, cocok banget buat nemenin makan siang panas-panas. Ditambah lagi pelayannya cepat tanggap dan ramah banget. Buat mahasiswa kayak aku, ini udah jadi tempat langganan tiap minggu!",
       topPosition: "632px",
       cardTopPosition: "597px",
@@ -28,7 +26,7 @@ export const Ulasan = () => {
       id: 3,
       name: "Wonwoo",
       rating: 5,
-      image: ellipse3,
+      imageAlt: "Reviewer avatar",
       text: "Awalnya nggak sengaja nemu warung ini pas lewat, tapi ternyata enaknya di luar ekspektasi. Suasananya adem, ada musik pelan, dan pelayannya sopan banget. Aku pesen pecel lele sambal korek, dan sumpah sambalnya tuh mantap banget! Gurih, pedas, tapi nggak bikin sakit perut. Tempatnya juga bersih dan nyaman, cocok buat nongkrong santai atau makan malam bareng keluarga. Sekarang malah jadi tempat wajib tiap weekend!",
       topPosition: "1043px",
       cardTopPosition: "1008px",
@@ -76,13 +74,12 @@ export const Ulasan = () => {
           >
             <div className="w-full h-full rounded-[25px] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] shadow-[0px_7px_4px_#00000040]" />
 
-            <img
-              className="object-cover absolute left-[58px] w-[147px] h-[147px]"
+            <DummyImage
+              className="absolute left-[58px] w-[147px] h-[147px]"
               style={{
                 top: `calc(${review.topPosition} - ${review.cardTopPosition})`,
               }}
               alt={`Foto profil ${review.name}`}
-              src={review.image}
             />
 
             <h2

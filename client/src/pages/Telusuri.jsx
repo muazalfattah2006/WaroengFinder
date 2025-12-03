@@ -1,71 +1,77 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowBack } from "./ArrowBack";
-import { FeaturedRestaurantsSection } from "./FeaturedRestaurantsSection";
+import { FeaturedRestaurantsSection } from "./FeaturedRestaurantSection";
 import { RestaurantCategoriesSection } from "./RestaurantCategoriesSection";
 import { RestaurantListSection } from "./RestaurantListSection";
 import { Search } from "./Search";
 
 export const DetailTelusuri = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("Terkait");
 
   const filterTabs = [
-    { id: "terkait", label: "Terkait", left: "26px" },
-    { id: "terdekat", label: "Terdekat", left: "365px" },
-    { id: "terlaris", label: "Terlaris", left: "704px" },
-    { id: "ulasan", label: "Ulasan", left: "1043px" },
+    { id: "terkait", label: "Terkait" },
+    { id: "terdekat", label: "Terdekat" },
+    { id: "terlaris", label: "Terlaris" },
+    { id: "ulasan", label: "Ulasan" },
   ];
 
   return (
-    <div className="relative w-[1366px] h-[1727px] bg-white">
-      <header className="absolute top-[30px] left-[calc(50.00%_-_579px)] w-[1243px] h-[63px] shadow-[0px_5px_4px_#00000040]">
-        <div className="absolute top-0 left-[calc(50.00%_-_622px)] w-[1241px] h-[63px] bg-[#387647] rounded-[50px]" />
+    <div className="min-h-screen bg-white flex flex-col">
+      {/* Header */}
+      <header className="h-20 flex items-center justify-between px-4 sm:px-8 shadow-[0px_5px_4px_#00000040] bg-[#387647]">
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ffcf03] text-white"
+          aria-label="Go back"
+        >
+          <ArrowBack className="w-8 h-8" />
+        </button>
 
-        <h1 className="absolute top-[9px] left-[calc(50.00%_-_66px)] [font-family:'Playfair-Medium',Helvetica] font-medium text-white text-4xl tracking-[0] leading-[normal] whitespace-nowrap">
+        <h1 className="[font-family:'Playfair-Medium',Helvetica] font-medium text-white text-2xl sm:text-3xl tracking-[0] leading-[normal]">
           Telusuri
         </h1>
 
-        <Search
-          className="!absolute !top-[13px] !left-[23px] !w-[37px] !h-[37px]"
-          aria-label="Search restaurants"
-        />
+        <Search className="w-7 h-7 text-white" aria-label="Search restaurants" />
       </header>
 
-      <ArrowBack
-        className="!absolute !top-7 !left-[17px] !w-[68px] !h-[68px]"
-        aria-label="Go back"
-      />
-
+      {/* Filter tabs */}
       <nav
-        className="absolute top-[127px] left-0 w-full"
+        className="px-4 sm:px-8 lg:px-16 py-4 bg-white"
         role="navigation"
         aria-label="Filter tabs"
       >
-        {filterTabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveFilter(tab.label)}
-            className="absolute w-[299px] h-[43px] bg-[#68dc84] rounded-[50px] shadow-[0px_5px_4px_#00000040] cursor-pointer transition-all hover:bg-[#5cc975] active:shadow-[0px_3px_2px_#00000040]"
-            style={{ left: tab.left }}
-            aria-pressed={activeFilter === tab.label}
-            aria-label={`Filter by ${tab.label}`}
-          >
-            <span className="[font-family:'Playfair-Medium',Helvetica] font-medium text-white text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {filterTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveFilter(tab.label)}
+              className={`h-11 rounded-full shadow-[0px_5px_4px_#00000040] [font-family:'Playfair-Medium',Helvetica] text-base sm:text-lg tracking-[0] leading-[normal] whitespace-nowrap transition-colors ${
+                activeFilter === tab.label
+                  ? "bg-[#68dc84] text-white"
+                  : "bg-white text-[#387647] border border-[#68dc84]"
+              }`}
+              aria-pressed={activeFilter === tab.label}
+            >
               {tab.label}
-            </span>
-          </button>
-        ))}
+            </button>
+          ))}
+        </div>
       </nav>
 
-      <main className="relative">
-        <section aria-label="Featured restaurants">
+      {/* Content sections */}
+      <main className="flex-1 px-4 sm:px-8 lg:px-16 pb-10 space-y-10">
+        <section aria-label="Featured restaurants" className="max-w-6xl mx-auto">
           <FeaturedRestaurantsSection />
         </section>
 
-        <section aria-label="Restaurant list">
+        <section aria-label="Restaurant list" className="max-w-6xl mx-auto">
           <RestaurantListSection />
         </section>
 
-        <section aria-label="Restaurant categories">
+        <section aria-label="Restaurant categories" className="max-w-6xl mx-auto">
           <RestaurantCategoriesSection />
         </section>
       </main>

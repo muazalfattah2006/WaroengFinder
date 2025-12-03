@@ -2,26 +2,14 @@ import React from "react";
 import { ArrowBack } from "./ArrowBack";
 import { Bookmark } from "./Bookmark";
 import { ChevronBackward } from "./ChevronBackward";
-import warung11 from "./warung1-1.png";
-import warung13 from "./warung1-3.png";
-import warung14 from "./warung1-4.png";
-import warung15 from "./warung1-5.png";
-import warung16 from "./warung1-6.png";
-import warung17 from "./warung1-7.png";
-import warung18 from "./warung1-8.png";
-import warung19 from "./warung1-9.png";
-import warung110 from "./warung1-10.png";
-import warung111 from "./warung1-11.png";
-import warung112 from "./warung1-12.png";
-import warung113 from "./warung1-13.png";
-import warung23 from "./warung2-3.png";
+import { DummyImage } from "./DummyImage";
 
 const menuItems = [
   {
     id: 1,
     name: "Ayam S. Ijo",
     price: "Rp 10.000",
-    image: warung11,
+    imageAlt: "Menu item image",
     top: "886px",
     left: "17px",
   },
@@ -29,7 +17,7 @@ const menuItems = [
     id: 2,
     name: "Ayam Gulai",
     price: "Rp 10.000",
-    image: warung13,
+    imageAlt: "Menu item image",
     top: "886px",
     left: "340px",
   },
@@ -37,7 +25,7 @@ const menuItems = [
     id: 3,
     name: "Ayam Geprek",
     price: "Rp 10.000",
-    image: warung14,
+    imageAlt: "Menu item image",
     top: "886px",
     left: "680px",
   },
@@ -45,7 +33,7 @@ const menuItems = [
     id: 4,
     name: "Ayam Penyet",
     price: "Rp 10.000",
-    image: warung15,
+    imageAlt: "Menu item image",
     top: "886px",
     left: "1020px",
   },
@@ -53,7 +41,7 @@ const menuItems = [
     id: 5,
     name: "Mie Goreng",
     price: "Rp 10.000",
-    image: warung16,
+    imageAlt: "Menu item image",
     top: "1364px",
     left: "15px",
   },
@@ -61,7 +49,7 @@ const menuItems = [
     id: 6,
     name: "Mie ayam",
     price: "Rp 10.000",
-    image: warung17,
+    imageAlt: "Menu item image",
     top: "1364px",
     left: "355px",
   },
@@ -69,7 +57,7 @@ const menuItems = [
     id: 7,
     name: "Mie Gomak",
     price: "Rp 10.000",
-    image: warung18,
+    imageAlt: "Menu item image",
     top: "1364px",
     left: "695px",
   },
@@ -77,7 +65,7 @@ const menuItems = [
     id: 8,
     name: "Kwetiau",
     price: "Rp 10.000",
-    image: warung19,
+    imageAlt: "Menu item image",
     top: "1364px",
     left: "1035px",
   },
@@ -85,7 +73,7 @@ const menuItems = [
     id: 9,
     name: "Es Teh Manis",
     price: "Rp 6.000",
-    image: warung110,
+    imageAlt: "Menu item image",
     top: "1834px",
     left: "17px",
   },
@@ -93,7 +81,7 @@ const menuItems = [
     id: 10,
     name: "Lemon Tea",
     price: "Rp 8.000",
-    image: warung111,
+    imageAlt: "Menu item image",
     top: "1834px",
     left: "357px",
   },
@@ -101,7 +89,7 @@ const menuItems = [
     id: 11,
     name: "Cofffee",
     price: "Rp 7.000",
-    image: warung112,
+    imageAlt: "Menu item image",
     top: "1834px",
     left: "697px",
   },
@@ -109,7 +97,7 @@ const menuItems = [
     id: 12,
     name: "Air Mineral",
     price: "Rp 5.000",
-    image: warung113,
+    imageAlt: "Menu item image",
     top: "1834px",
     left: "1037px",
   },
@@ -118,10 +106,9 @@ const menuItems = [
 export const DetailWarungMuaz = () => {
   return (
     <main className="relative w-[1366px] h-[2299px] bg-white">
-      <img
-        className="absolute top-0 left-0 w-[1366px] h-[428px] aspect-[3.19] object-cover"
+      <DummyImage
+        className="absolute top-0 left-0 w-[1366px] h-[428px] aspect-[3.19]"
         alt="Warung Muaz restaurant exterior"
-        src={warung23}
       />
 
       <button
@@ -178,8 +165,8 @@ export const DetailWarungMuaz = () => {
           >
             <div className="absolute top-0 left-0 w-[316px] h-[445px] rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)]" />
 
-            <img
-              className="absolute object-cover aspect-[1]"
+            <DummyImage
+              className="absolute aspect-[1]"
               style={{
                 top: imageTop,
                 left: `${imageLeftOffset}px`,
@@ -187,7 +174,6 @@ export const DetailWarungMuaz = () => {
                 height: index >= 8 ? "254px" : "243px",
               }}
               alt={item.name}
-              src={item.image}
             />
 
             <h3
