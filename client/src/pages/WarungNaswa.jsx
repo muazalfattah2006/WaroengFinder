@@ -75,7 +75,10 @@ export const DetailWarungNaswa = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)] animate-fade-up" style={{ "--animation-delay": "0.03s" }}>
+      <main
+        className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)] animate-fade-up"
+        style={{ "--animation-delay": "0.03s" }}
+      >
         {/* Hero with back button */}
         <div className="relative w-full">
           <DummyImage
@@ -135,7 +138,9 @@ export const DetailWarungNaswa = () => {
               <button
                 type="button"
                 onClick={handleToggleFavorite}
-                aria-label={isFavorite ? "Hapus dari favorite" : "Tambah ke favorite"}
+                aria-label={
+                  isFavorite ? "Hapus dari favorite" : "Tambah ke favorite"
+                }
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-150 hover:-translate-y-0.5 active:scale-95"
               >
                 {isFavorite ? (
