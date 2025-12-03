@@ -1,217 +1,136 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowBack } from "./ArrowBack";
 import { Bookmark } from "./Bookmark";
+import { BookmarkFilled } from "./BookmarkFilled";
 import { ChevronBackward } from "./ChevronBackward";
 import { DummyImage } from "./DummyImage";
 
 const menuItems = [
-  {
-    id: 1,
-    name: "Ayam S. Ijo",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "886px",
-    left: "17px",
-  },
-  {
-    id: 2,
-    name: "Ayam Gulai",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "886px",
-    left: "340px",
-  },
-  {
-    id: 3,
-    name: "Ayam Geprek",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "886px",
-    left: "680px",
-  },
-  {
-    id: 4,
-    name: "Ayam Penyet",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "886px",
-    left: "1020px",
-  },
-  {
-    id: 5,
-    name: "Mie Goreng",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "1364px",
-    left: "15px",
-  },
-  {
-    id: 6,
-    name: "Mie ayam",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "1364px",
-    left: "355px",
-  },
-  {
-    id: 7,
-    name: "Mie Gomak",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "1364px",
-    left: "695px",
-  },
-  {
-    id: 8,
-    name: "Kwetiau",
-    price: "Rp 10.000",
-    imageAlt: "Menu item image",
-    top: "1364px",
-    left: "1035px",
-  },
-  {
-    id: 9,
-    name: "Es Teh Manis",
-    price: "Rp 6.000",
-    imageAlt: "Menu item image",
-    top: "1834px",
-    left: "17px",
-  },
-  {
-    id: 10,
-    name: "Lemon Tea",
-    price: "Rp 8.000",
-    imageAlt: "Menu item image",
-    top: "1834px",
-    left: "357px",
-  },
-  {
-    id: 11,
-    name: "Cofffee",
-    price: "Rp 7.000",
-    imageAlt: "Menu item image",
-    top: "1834px",
-    left: "697px",
-  },
-  {
-    id: 12,
-    name: "Air Mineral",
-    price: "Rp 5.000",
-    imageAlt: "Menu item image",
-    top: "1834px",
-    left: "1037px",
-  },
+  { id: 1, name: "Ayam S. Ijo", price: "Rp 10.000" },
+  { id: 2, name: "Ayam Gulai", price: "Rp 10.000" },
+  { id: 3, name: "Ayam Geprek", price: "Rp 10.000" },
+  { id: 4, name: "Ayam Penyet", price: "Rp 10.000" },
+  { id: 5, name: "Mie Goreng", price: "Rp 10.000" },
+  { id: 6, name: "Mie ayam", price: "Rp 10.000" },
+  { id: 7, name: "Mie Gomak", price: "Rp 10.000" },
+  { id: 8, name: "Kwetiau", price: "Rp 10.000" },
+  { id: 9, name: "Es Teh Manis", price: "Rp 6.000" },
+  { id: 10, name: "Lemon Tea", price: "Rp 8.000" },
+  { id: 11, name: "Cofffee", price: "Rp 7.000" },
+  { id: 12, name: "Air Mineral", price: "Rp 5.000" },
 ];
 
 export const DetailWarungMuaz = () => {
+  const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleGoToUlasan = () => {
+    navigate("/ulasan");
+  };
+
   return (
-    <main className="relative w-[1366px] h-[2299px] bg-white">
-      <DummyImage
-        className="absolute top-0 left-0 w-[1366px] h-[428px] aspect-[3.19]"
-        alt="Warung Muaz restaurant exterior"
-      />
+    <div className="min-h-screen bg-[#387647] flex flex-col">
+      <main className="flex-1 w-full max-w-5xl mx-auto bg-white flex flex-col shadow-[0px_5px_15px_rgba(0,0,0,0.2)]">
+        {/* Hero with back button */}
+        <div className="relative w-full">
+          <DummyImage
+            className="w-full aspect-[3/1] sm:aspect-[16/6]"
+            style={{ borderRadius: 0 }}
+            alt="Warung Muaz restaurant exterior"
+          />
 
-      <button
-        className="absolute top-[27px] left-[34px] w-[73px] h-[73px] flex bg-[#ffcf03] rounded-[36.5px]"
-        aria-label="Go back to previous page"
-      >
-        <ArrowBack className="!mt-0.5 !w-[68px] !h-[68px] !ml-[3px]" />
-      </button>
-
-      <h1 className="absolute top-[462px] left-[calc(50.00%_-_630px)] [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-8xl tracking-[0] leading-[normal] whitespace-nowrap">
-        Warung Muaz
-      </h1>
-
-      <div
-        className="absolute top-[488px] left-[calc(50.00%_+_259px)] [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-[64px] tracking-[0] leading-[normal] whitespace-nowrap"
-        role="img"
-        aria-label="5 star rating"
-      >
-        ⭐⭐⭐⭐⭐
-      </div>
-
-      <address className="absolute top-[611px] left-[calc(50.00%_-_630px)] [font-family:'Playfair-Black',Helvetica] font-black text-[#454545] text-[40px] tracking-[0] leading-[normal] whitespace-nowrap not-italic">
-        📍 Jalan Dr. Mansyur
-      </address>
-
-      <time className="absolute top-[679px] left-[calc(50.00%_-_630px)] [font-family:'Playfair-Black',Helvetica] font-black text-[#454545] text-[40px] tracking-[0] leading-[normal] whitespace-nowrap">
-        🕑 9.00 - 21.00
-      </time>
-
-      <div
-        className="absolute top-[754px] left-0 w-[1366px] h-3.5 bg-[#d9d9d9]"
-        role="separator"
-      />
-
-      <h2 className="absolute top-[795px] left-[calc(50.00%_-_630px)] [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-5xl tracking-[0] leading-[normal]">
-        Menu (12)
-      </h2>
-
-      {menuItems.map((item, index) => {
-        const isFirstRow = index < 4;
-        const isSecondRow = index >= 4 && index < 8;
-        const imageTop = isFirstRow ? "33px" : isSecondRow ? "33px" : "33px";
-        const imageLeftOffset = isFirstRow
-          ? [38, 38, 38, 38][index]
-          : isSecondRow
-          ? [38, 38, 38, 38][index - 4]
-          : [34, 34, 34, 34][index - 8];
-
-        return (
-          <article
-            key={item.id}
-            className="absolute w-[316px] h-[445px]"
-            style={{ top: item.top, left: item.left }}
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            aria-label="Kembali"
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#ffcf03] flex items-center justify-center shadow"
           >
-            <div className="absolute top-0 left-0 w-[316px] h-[445px] rounded-[30px] shadow-[0px_7px_4px_#00000040] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)]" />
+            <ArrowBack className="w-7 h-7 sm:w-8 sm:h-8" />
+          </button>
+        </div>
 
-            <DummyImage
-              className="absolute aspect-[1]"
-              style={{
-                top: imageTop,
-                left: `${imageLeftOffset}px`,
-                width: index >= 8 ? "251px" : "243px",
-                height: index >= 8 ? "254px" : "243px",
-              }}
-              alt={item.name}
-            />
+        {/* Info section */}
+        <section className="px-4 sm:px-8 py-5 sm:py-6 border-b border-[#d9d9d9]">
+          <div className="flex flex-col gap-3">
+            <div className="flex items-start justify-between gap-4">
+              <h1 className="[font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-3xl sm:text-4xl leading-tight">
+                Warung Muaz
+              </h1>
 
-            <h3
-              className="absolute [font-family:'Playfair-Black',Helvetica] font-black text-white text-[44px] tracking-[0] leading-[normal]"
-              style={{
-                top: index >= 8 ? "268px" : "268px",
-                left: "38px",
-              }}
-            >
-              {item.name}
-            </h3>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleGoToUlasan}
+                  className="flex items-center gap-1 [font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-xl sm:text-2xl"
+                  aria-label="Lihat ulasan"
+                >
+                  <span>⭐⭐⭐⭐⭐</span>
+                </button>
 
-            <p
-              className="absolute [font-family:'Playfair-Black',Helvetica] font-black text-white text-[32px] tracking-[0] leading-[normal] whitespace-nowrap"
-              style={{
-                top: index >= 8 ? "321px" : "321px",
-                left: "38px",
-              }}
-            >
-              {item.price}
-            </p>
-          </article>
-        );
-      })}
+                <button
+                  type="button"
+                  onClick={handleGoToUlasan}
+                  aria-label="Ke halaman ulasan"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#387647] rotate-180"
+                >
+                  <ChevronBackward className="w-full h-full" />
+                </button>
+              </div>
+            </div>
 
-      <button
-        className="!absolute !top-[659px] !left-[1265px] !w-[62px] !h-[62px]"
-        aria-label="Bookmark this restaurant"
-      >
-        <Bookmark className="!w-[62px] !h-[62px]" />
-      </button>
+            <address className="not-italic [font-family:'Playfair-Black',Helvetica] font-black text-[#454545] text-base sm:text-lg">
+              📍 Jalan Dr. Mansyur
+            </address>
 
-      <button
-        className="!absolute !top-[480px] !left-[1252px] !w-[92px] !h-[92px]"
-        aria-label="View more options"
-      >
-        <ChevronBackward className="!w-[92px] !h-[92px]" />
-      </button>
-    </main>
+            <div className="flex items-center justify-between gap-4">
+              <time className="[font-family:'Playfair-Black',Helvetica] font-black text-[#454545] text-base sm:text-lg">
+                🕑 9.00 - 21.00
+              </time>
+
+              <button
+                type="button"
+                onClick={() => setIsFavorite((prev) => !prev)}
+                aria-label="Tambah ke favorite"
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#387647]"
+              >
+                {isFavorite ? (
+                  <BookmarkFilled className="w-full h-full" color="#387647" />
+                ) : (
+                  <Bookmark className="w-full h-full" />
+                )}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Menu section */}
+        <section className="px-4 sm:px-8 pt-4 pb-8 sm:pt-6 sm:pb-10">
+          <h2 className="[font-family:'Playfair-Black',Helvetica] font-black text-[#387647] text-2xl sm:text-3xl mb-4">
+            Menu (12)
+          </h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+            {menuItems.map((item) => (
+              <article
+                key={item.id}
+                className="rounded-[20px] sm:rounded-[25px] bg-[linear-gradient(180deg,rgba(104,220,132,1)_0%,rgba(56,118,71,1)_100%)] shadow-[0px_7px_4px_#00000040] p-3 sm:p-4 flex flex-col items-center text-center text-white"
+              >
+                <DummyImage
+                  className="w-full aspect-[1] mb-3 sm:mb-4"
+                  alt={item.name}
+                />
+                <h3 className="[font-family:'Playfair-Black',Helvetica] font-black text-sm sm:text-base leading-tight mb-1">
+                  {item.name}
+                </h3>
+                <p className="[font-family:'Playfair-Black',Helvetica] font-black text-xs sm:text-sm">
+                  {item.price}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
   );
 };
